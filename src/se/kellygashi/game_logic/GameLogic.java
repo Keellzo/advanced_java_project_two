@@ -18,6 +18,9 @@ public class GameLogic {
         this.scanner = scanner;
     }
 
+    /**
+     * Starts the game, where player always starts and this method continues until somebody win/lose or draw
+     */
     public void startGame() {
         int depth = 0;
         boolean isPlayersTurn = true;
@@ -45,6 +48,11 @@ public class GameLogic {
         }
     }
 
+    /**
+     * The player gets a suggested move but can always decide to mark the board by the player itself
+     *
+     * @param depth, current game depth for min-max evaluation
+     */
     private void handlePlayerTurn(int depth) {
         System.out.println(Color.BLUE + "----------------------");
 
@@ -62,6 +70,11 @@ public class GameLogic {
         board.placeMark("X", row, col);
     }
 
+    /**
+     * Handling bots turn, calculating the best move from the min-max algorithm and then places the mark
+     *
+     * @param depth, current game depth for min-max evaluation
+     */
     private void handleBotTurn(int depth) {
         System.out.println(Color.RED + "----------------------");
         System.out.println(Color.RED + "Bot's turn");
@@ -72,6 +85,4 @@ public class GameLogic {
 
         board.placeMark("O", bestMove.row, bestMove.col);
     }
-
-
 }

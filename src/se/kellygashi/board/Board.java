@@ -63,7 +63,7 @@ public class Board implements BoardOperations {
         if (board[0][0].equals(mark) && board[1][1].equals(mark) && board[2][2].equals(mark)) {
             return true;
         }
-        if (board[0][2].equals(mark) && board[1][1].equals(mark) && board[2][0].equals(mark)){
+        if (board[0][2].equals(mark) && board[1][1].equals(mark) && board[2][0].equals(mark)) {
             return true;
         }
 
@@ -84,8 +84,8 @@ public class Board implements BoardOperations {
     public Board copyBoard() {
         Board newBoard = new Board();
 
-        for (int i = 0; i < SIZE; i++){
-            for (int j = 0; j < SIZE; j++){
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
                 newBoard.board[i][j] = this.board[i][j];
             }
         }
@@ -130,6 +130,4 @@ public class Board implements BoardOperations {
         }
         return 0;
     }
-
-
 }
